@@ -1,0 +1,19 @@
+﻿<Window x:Class="KaraokedoMaclim.ScoreWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Pontuação" Height="Auto" Width="Auto" 
+        WindowState="Maximized" WindowStyle="None" 
+        ResizeMode="NoResize">
+    <Grid>
+        <!-- Definir o fundo da janela -->
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <!-- Texto da pontuação e mensagem centralizados -->
+        <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock x:Name="ScoreText" FontSize="72" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBlock x:Name="MessageText" FontSize="48" Foreground="White" HorizontalAlignment="Center" Margin="0,20,0,0"/>
+        </StackPanel>
+    </Grid>
+</Window>

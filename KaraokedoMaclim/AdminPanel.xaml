@@ -1,0 +1,11 @@
+﻿<Window x:Class="KaraokedoMaclim.AdminPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Painel do Administrador" Height="300" Width="400" KeyDown="CreditsInput_KeyDown">
+    <Grid>
+        <TextBlock Text="Adicionar Créditos" FontSize="24" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,20,0,0"/>
+
+        <!-- Certifique-se de que o TextBox tenha o nome correto -->
+        <TextBox x:Name="CreditsInput" FontSize="20" Width="200" HorizontalAlignment="Center" VerticalAlignment="Center" />
+    </Grid>
+</Window>

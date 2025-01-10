@@ -1,0 +1,14 @@
+﻿<Window x:Class="KaraokedoMaclim.MusicWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Music Window" 
+        WindowState="Maximized" 
+        WindowStyle="None"
+        Height="Auto" Width="Auto"
+        KeyDown="Window_KeyDown">
+    <Grid>
+        <!-- MediaElement para exibir o vídeo -->
+        <MediaElement x:Name="VideoPlayer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
+                      MediaEnded="VideoPlayer_MediaEnded" />
+    </Grid>
+</Window>
