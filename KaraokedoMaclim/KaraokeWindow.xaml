@@ -1,0 +1,20 @@
+﻿<Window x:Class="KaraokedoMaclim.KaraokeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Karaoke" Height="450" Width="800"
+        WindowStyle="None" ResizeMode="NoResize" Background="Black" Loaded="Window_Loaded" KeyDown="Window_KeyDown">
+    <Grid>
+        <!-- Definir o fundo da janela com a mesma imagem -->
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <TextBlock x:Name="LyricsDisplay"
+                   FontSize="30"
+                   Foreground="White"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center"
+                   TextWrapping="Wrap"
+                   TextAlignment="Center"/>
+    </Grid>
+</Window>

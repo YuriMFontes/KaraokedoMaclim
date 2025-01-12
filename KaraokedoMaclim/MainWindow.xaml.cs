@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Windows;
 using System.Windows.Input;
 using KaraokedoMaclim.Models;
@@ -89,7 +90,7 @@ namespace KaraokedoMaclim
                     return;
                 }
 
-                // Reproduzir música se houver créditos suficientes
+                // Reproduzir música no modo Karaokê
                 if (KaraokeSession.Credits > 0 || KaraokeSession.Credits == int.MaxValue)
                 {
                     var musica = _musicas.Find(m => m.Numero == numeroMusica);
@@ -102,18 +103,18 @@ namespace KaraokedoMaclim
                             AtualizarCreditos();
                         }
 
-                        string musicDirectory = @"D:\Musicas";
-                        string audioPath = Path.Combine(musicDirectory, $"{numeroMusica}.mp4");
+                        string videoDirectory = @"D:\Musicas"; // Caminho onde os vídeos estão localizados
+                        string videoPath = Path.Combine(videoDirectory, $"{numeroMusica}.mp4"); // Supondo que os vídeos sejam arquivos .mp4
 
-                        if (File.Exists(audioPath))
+                        if (File.Exists(videoPath))
                         {
-                            var musicWindow = new MusicWindow(audioPath);
+                            var musicWindow = new MusicWindow(videoPath); // Passando o caminho do vídeo para o MusicWindow
                             musicWindow.Show();
-                            this.Hide();
+                            this.Hide(); // Ocultar a janela principal enquanto o vídeo é exibido
                         }
                         else
                         {
-                            MessageBox.Show($"Arquivo de música não encontrado: {audioPath}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
+                            MessageBox.Show($"Vídeo não encontrado para: {numeroMusica}", "Erro", MessageBoxButton.OK, MessageBoxImage.Error);
                         }
                     }
                     else
