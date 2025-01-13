@@ -4,11 +4,18 @@
         Title="Music Window" 
         WindowState="Maximized" 
         WindowStyle="None"
-        Height="Auto" Width="Auto"
+        Background="Black"
         KeyDown="Window_KeyDown">
+
     <Grid>
-        <!-- MediaElement para exibir o vídeo -->
-        <MediaElement x:Name="VideoPlayer" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" 
-                      MediaEnded="VideoPlayer_MediaEnded" />
+        <!-- Fundo da tela -->
+        <Grid.Background>
+            <ImageBrush ImageSource="C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png" Stretch="UniformToFill"/>
+        </Grid.Background>
+
+        <!-- Caixa de vídeo centralizada -->
+        <Border Width="800" Height="450" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+            <MediaElement x:Name="VideoPlayer" Stretch="Uniform" MediaEnded="VideoPlayer_MediaEnded"/>
+        </Border>
     </Grid>
 </Window>

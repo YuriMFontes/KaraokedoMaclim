@@ -14,7 +14,7 @@ namespace KaraokedoMaclim
             InitializeComponent();
             _videoPath = videoPath;
 
-            VideoPlayer.Source = new Uri(_videoPath);
+            VideoPlayer.Source = new Uri(_videoPath, UriKind.Absolute);
             VideoPlayer.LoadedBehavior = MediaState.Manual;
             VideoPlayer.Play();
         }
@@ -31,12 +31,8 @@ namespace KaraokedoMaclim
             if (e.Key == Key.Back)
             {
                 var mainWindow = Application.Current.Windows.OfType<MainWindow>().FirstOrDefault();
-
-                if (mainWindow != null)
-                {
-                    mainWindow.Show();
-                    this.Close();
-                }
+                mainWindow?.Show();
+                this.Close();
             }
         }
     }
