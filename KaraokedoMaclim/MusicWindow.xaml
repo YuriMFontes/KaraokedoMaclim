@@ -14,7 +14,7 @@
         </Grid.Background>
 
         <!-- Caixa de vídeo centralizada -->
-        <Border Width="800" Height="450" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent">
+        <Border Width="800" Height="450" HorizontalAlignment="Center" VerticalAlignment="Center" Background="Transparent" Margin="0,250,0,0">
             <MediaElement x:Name="VideoPlayer" Stretch="Uniform" MediaEnded="VideoPlayer_MediaEnded"/>
         </Border>
     </Grid>
