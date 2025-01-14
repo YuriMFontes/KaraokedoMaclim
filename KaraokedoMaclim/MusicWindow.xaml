@@ -10,7 +10,7 @@
     <Grid>
         <!-- Fundo da tela -->
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="D:\Imagem\background.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <!-- Caixa de vídeo centralizada -->

@@ -19,7 +19,7 @@ namespace KaraokedoMaclim
         public MainWindow()
         {
             InitializeComponent();
-            _musicas = Musica.CarregarMusicas(@"C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Musicas\musicas.txt");
+            _musicas = Musica.CarregarMusicas(@"D:\Musicas\musicas.txt");
             AtualizarCreditos();
         }
 

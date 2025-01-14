@@ -6,7 +6,7 @@
     <Grid>
         <!-- Definir o fundo da janela -->
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="D:\Imagem\background.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <!-- Texto de instrução em branco -->
