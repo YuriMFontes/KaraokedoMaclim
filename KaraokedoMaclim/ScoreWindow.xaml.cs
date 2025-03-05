@@ -10,17 +10,13 @@ namespace KaraokedoMaclim
         private int _currentScore = 0;
         private DispatcherTimer _scoreTimer;
         private DispatcherTimer _returnTimer;
-        private DateTime _startTime;
 
         public ScoreWindow()
         {
             InitializeComponent();
 
-            // Inicializa o tempo de início
-            _startTime = DateTime.Now;
-
-            // Pontuação inicial
-            _score = 50;
+            // Gera uma pontuação aleatória conforme as chances definidas
+            _score = GenerateRandomScore();
 
             // Inicializa o texto com 0
             ScoreText.Text = "0";
@@ -33,35 +29,31 @@ namespace KaraokedoMaclim
             StartReturnToMenuTimer();
         }
 
+        private int GenerateRandomScore()
+        {
+            Random random = new Random();
+            int chance = random.Next(100); // Gera um número de 0 a 99
+
+            if (chance < 5) return random.Next(40, 50); // 5% de chance
+            if (chance < 15) return random.Next(50, 60); // 10% de chance
+            if (chance < 30) return random.Next(60, 70); // 15% de chance
+            if (chance < 65) return random.Next(70, 80); // 35% de chance
+            if (chance < 90) return random.Next(80, 90); // 25% de chance
+            return random.Next(90, 100); // 10% de chance
+        }
+
         private void StartScoreAnimation()
         {
-            // Cria o timer para animar a pontuação
             _scoreTimer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromMilliseconds(50) // Atualiza a cada 50ms
             };
             _scoreTimer.Tick += ScoreTimer_Tick;
-
             _scoreTimer.Start();
         }
 
         private void ScoreTimer_Tick(object sender, EventArgs e)
         {
-            // Simula uma pontuação com base no tempo de canto (quanto mais rápido, maior a pontuação)
-            TimeSpan elapsedTime = DateTime.Now - _startTime;
-            _score += (int)(elapsedTime.TotalSeconds * 2); // Aumenta a pontuação conforme o tempo
-
-            // Para limitar a pontuação a um valor entre 50 e 100
-            if (_score > 100) _score = 100;
-            if (_score < 50) _score = 50;
-
-            // Atualiza a pontuação no display
-            ScoreText.Text = _score.ToString();
-
-            // Para limitar a pontuação a um valor entre 50 e 100
-            if (_score < 50) _score = 50;
-
-            // Adiciona uma mensagem baseada na pontuação final
             if (_currentScore < _score)
             {
                 _currentScore++;
@@ -93,7 +85,6 @@ namespace KaraokedoMaclim
 
         private void StartReturnToMenuTimer()
         {
-            // Cria o timer para retornar ao menu inicial após 10 segundos
             _returnTimer = new DispatcherTimer
             {
                 Interval = TimeSpan.FromSeconds(10)
@@ -104,17 +95,15 @@ namespace KaraokedoMaclim
 
         private void ReturnToMenuTimer_Tick(object sender, EventArgs e)
         {
-            _returnTimer.Stop(); // Para o timer
-            ReturnToMenu(); // Volta ao menu inicial
+            _returnTimer.Stop();
+            ReturnToMenu();
         }
+
 
         private void ReturnToMenu()
         {
-            // Cria uma nova instância da MainWindow e exibe
             MainWindow mainWindow = new MainWindow();
             mainWindow.Show();
-
-            // Fecha a janela atual (ScoreWindow)
             this.Close();
         }
     }

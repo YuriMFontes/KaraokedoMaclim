@@ -7,7 +7,7 @@
     <Grid>
         <!-- Definir o fundo da janela -->
         <Grid.Background>
-            <ImageBrush ImageSource="D:\Imagem\background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="F:\Imagem\background.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <!-- Texto da pontuação e mensagem centralizados -->

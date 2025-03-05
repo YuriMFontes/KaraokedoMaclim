@@ -6,7 +6,7 @@
     <Grid>
         <!-- Definir o fundo da janela com a mesma imagem -->
         <Grid.Background>
-            <ImageBrush ImageSource="C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="F:\Imagem\background.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <TextBlock x:Name="LyricsDisplay"

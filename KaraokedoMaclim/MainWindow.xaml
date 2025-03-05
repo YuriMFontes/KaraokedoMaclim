@@ -6,16 +6,16 @@
     <Grid>
         <!-- Definir o fundo da janela -->
         <Grid.Background>
-            <ImageBrush ImageSource="D:\Imagem\background.png" Stretch="UniformToFill"/>
+            <ImageBrush ImageSource="F:\Imagem\background.png" Stretch="UniformToFill"/>
         </Grid.Background>
 
         <!-- Texto de instrução em branco -->
         <TextBlock Text="Digite o número da música:" FontSize="32" VerticalAlignment="Top" HorizontalAlignment="Center" 
-                   Foreground="White" Margin="0,350,0,0"/>
+                   Foreground="White" Margin="0,450,0,0"/>
 
         <!-- Caixa de Texto -->
         <TextBox x:Name="MusicNumberInput" FontSize="32" Width="400" HorizontalAlignment="Center" VerticalAlignment="Top" 
-                 Margin="0,450,0,0" 
+                 Margin="0,520,0,0" 
                  PreviewTextInput="MusicNumberInput_PreviewTextInput"
                  TextChanged="MusicNumberInput_TextChanged"
                  KeyDown="MusicNumberInput_KeyDown"/>
@@ -23,7 +23,7 @@
         <!-- Exibir Detalhes da Música em branco -->
         <TextBlock x:Name="MusicDetails" FontSize="32" FontWeight="Bold" TextAlignment="Center" 
                    HorizontalAlignment="Center" VerticalAlignment="Top" TextWrapping="Wrap" 
-                   Foreground="White" Margin="0,550,0,0"/>
+                   Foreground="White" Margin="0,600,0,0"/>
 
         <!-- Exibir Créditos no canto superior direito -->
         <TextBlock x:Name="CreditsTextBlock" FontSize="24" HorizontalAlignment="Right" VerticalAlignment="Top" 

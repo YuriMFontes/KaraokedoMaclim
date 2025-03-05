@@ -38,7 +38,7 @@ namespace KaraokedoMaclim
             this.Topmost = true; // Para manter a janela sempre acima das outras
             this.Background = new ImageBrush
             {
-                ImageSource = new BitmapImage(new Uri(@"C:\Users\yurim\source\repos\KaraokedoMaclim\KaraokedoMaclim\Imagens\background.png")),
+                ImageSource = new BitmapImage(new Uri(@"F:\Imagem\background.png")),
                 Stretch = Stretch.UniformToFill
             };
         }
@@ -144,7 +144,7 @@ namespace KaraokedoMaclim
 
         private void Window_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.Key == Key.Space) // Pressionando "Space" para voltar à MainWindow
+            if (e.Key == Key.Space) 
             {
                 VoltarButton_Click(sender, e);
             }

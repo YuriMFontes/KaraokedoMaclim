@@ -13,13 +13,13 @@ namespace KaraokedoMaclim
         private const string UnlimitedCreditsPassword = "246800"; // Senha para desbloquear créditos ilimitados
         private const string AdminPanelPassword = "212223"; // Senha para abrir o painel administrativo
         private List<Musica> _musicas;
-        private int _previousCredits = 0; // Armazena os créditos antes de desbloquear créditos ilimitados
+        private int _previousCredits = 0; 
         private bool _isAdminPanelOpen = false;
 
         public MainWindow()
         {
             InitializeComponent();
-            _musicas = Musica.CarregarMusicas(@"D:\Musicas\musicas.txt");
+            _musicas = Musica.CarregarMusicas(@"F:\Musicas\musicas.txt");
             AtualizarCreditos();
         }
 
@@ -37,7 +37,7 @@ namespace KaraokedoMaclim
 
         private void MusicNumberInput_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            e.Handled = !int.TryParse(e.Text, out _); // Permitir apenas números
+            e.Handled = !int.TryParse(e.Text, out _); 
         }
 
         private void MusicNumberInput_TextChanged(object sender, EventArgs e)
@@ -103,14 +103,14 @@ namespace KaraokedoMaclim
                             AtualizarCreditos();
                         }
 
-                        string videoDirectory = @"D:\Musicas"; // Caminho onde os vídeos estão localizados
-                        string videoPath = Path.Combine(videoDirectory, $"{numeroMusica}.mp4"); // Supondo que os vídeos sejam arquivos .mp4
+                        string videoDirectory = @"F:\Musicas"; // Caminho onde os vídeos estão localizados
+                        string videoPath = Path.Combine(videoDirectory, $"{numeroMusica}.mp4"); 
 
                         if (File.Exists(videoPath))
                         {
-                            var musicWindow = new MusicWindow(videoPath); // Passando o caminho do vídeo para o MusicWindow
+                            var musicWindow = new MusicWindow(videoPath); 
                             musicWindow.Show();
-                            this.Hide(); // Ocultar a janela principal enquanto o vídeo é exibido
+                            this.Hide(); 
                         }
                         else
                         {
